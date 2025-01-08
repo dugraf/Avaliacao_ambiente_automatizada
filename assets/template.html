@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Relatório do Servidor</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Relatório do Servidor</h1>
+        
+        <div class="section">
+            <h2>Informações Gerais</h2>
+            <p><strong>Hostname:</strong> {hostname}</p>
+            <p><strong>CPU:</strong> {cpu}</p>
+            <p><strong>RAM:</strong> {ram}</p>
+            <p><strong>Sistema Operacional:</strong> {sistema_operacional}</p>
+        </div>
+
+        <div class="section">
+            <h2>Discos</h2>
+            <ul>
+                {discos}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
