@@ -1,9 +1,12 @@
 import psutil
 import platform
 import socket
+import cpuinfo
+import re
 from models.servidor import Servidor
 from utils.logger import log_erro
 from views.interface import exibir_alerta_erro
+from scraper.scraper import Scraper
 
 def coletar_dados_locais():
     try:
@@ -14,11 +17,22 @@ def coletar_dados_locais():
         log_erro(f"Erro ao coletar hostname: {e}")
     
     try:
-        cpu = platform.processor()
+        cpu = cpuinfo.get_cpu_info()['brand_raw']
     except Exception as e:
         cpu = "Erro ao coletar CPU"
         exibir_alerta_erro(f"⚠️ Erro ao coletar CPU: {e}")
         log_erro(f"Erro ao coletar CPU: {e}")
+        
+    try:       
+        scraper = Scraper()
+        buscar_ano_cpu = scraper.search(query=cpu, limit=1)[0][0]
+        ano = re.search(r"\d{4}", buscar_ano_cpu.get("date")).group()
+        print(f"Ano de lançamento do processador: {ano}")
+            
+    except Exception as e:
+        ano = "Erro ao coletar ano do processador"
+        exibir_alerta_erro(f"⚠️ Erro ao coletar ano do processador: {e}")
+        log_erro(f"Erro ao coletar ano do processador: {e}")
     
     try:
         ram = f"{round(psutil.virtual_memory().total / (1024**3), 2)} GB"
@@ -51,4 +65,4 @@ def coletar_dados_locais():
         exibir_alerta_erro(f"⚠️ Erro ao coletar Sistema Operacional: {e}")
         log_erro(f"Erro ao coletar Sistema Operacional: {e}")
     
-    return Servidor(hostname, cpu, ram, discos, sistema_operacional)
+    return Servidor(hostname, cpu, ano, ram, discos, sistema_operacional)

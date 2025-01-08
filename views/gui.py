@@ -7,6 +7,7 @@ def iniciar_coleta():
     servidor = coletar_dados_locais()
     messagebox.showinfo("Dados Coletados", str(servidor))
     exportar_para_html(servidor)
+    exit()
 
 def iniciar_gui():
     root = tk.Tk()

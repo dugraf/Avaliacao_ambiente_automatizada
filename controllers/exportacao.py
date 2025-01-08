@@ -14,6 +14,7 @@ def exportar_para_html(servidor):
     html_content = template.format(
         hostname=servidor.hostname,
         cpu=servidor.cpu,
+        ano = servidor.ano,
         ram=servidor.ram,
         discos=discos_html,
         sistema_operacional=servidor.sistema_operacional
