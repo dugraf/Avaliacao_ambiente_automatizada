@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<ConfiguracaoServidor>
+  <Servidores>
+    <Servidor1>
+      <IP>192.168.0.10</IP>
+      <Hospedagem>Aplicação</Hospedagem>
+    </Servidor1>
+  </Servidores>
+  <Cliente>as</Cliente>
+  <Usuarios>sadads</Usuarios>
+  <OrdemServico>adsads</OrdemServico>
+  <Versao>ads</Versao>
+  <Servicos>
+    <Portais>True</Portais>
+    <Metadados>False</Metadados>
+    <BI>True</BI>
+  </Servicos>
+</ConfiguracaoServidor>

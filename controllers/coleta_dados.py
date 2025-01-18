@@ -27,12 +27,24 @@ def coletar_dados_locais():
         scraper = Scraper()
         buscar_ano_cpu = scraper.search(query=cpu, limit=1)[0][0]
         ano = re.search(r"\d{4}", buscar_ano_cpu.get("date")).group()
-        print(f"Ano de lançamento do processador: {ano}")
-            
     except Exception as e:
         ano = "Erro ao coletar ano do processador"
         exibir_alerta_erro(f"⚠️ Erro ao coletar ano do processador: {e}")
         log_erro(f"Erro ao coletar ano do processador: {e}")
+        
+    try:
+        nucleos = cpuinfo.get_cpu_info()['count']
+    except Exception as e:
+        nucleos = "Erro ao coletar a quantidade de núcleos"
+        exibir_alerta_erro(f"⚠️ Erro ao coletar quantidade de núcleos: {e}")
+        log_erro(f"Erro ao coletar quantidade de núcleos: {e}")
+        
+    try:
+        threads = psutil.cpu_count(logical=True)
+    except Exception as e:
+        threads = "Erro ao coletar a quantidade de threads"
+        exibir_alerta_erro(f"⚠️ Erro ao coletar quantidade de threads: {e}")
+        log_erro(f"Erro ao coletar quantidade de threads: {e}")
     
     try:
         ram = f"{round(psutil.virtual_memory().total / (1024**3), 2)} GB"
@@ -40,6 +52,13 @@ def coletar_dados_locais():
         ram = "Erro ao coletar RAM"
         exibir_alerta_erro(f"⚠️ Erro ao coletar RAM: {e}")
         log_erro(f"Erro ao coletar RAM: {e}")
+        
+    try:
+        rede = "MB" if psutil.net_io_counters().bytes_sent < 1e9 else "GB"
+    except Exception as e:
+        rede = "Erro ao coletar se a rede é GB ou MB"
+        exibir_alerta_erro(f"⚠️ Erro ao coletar se a rede é GB ou MB: {e}")
+        log_erro(f"Erro ao coletar se a rede é GB ou MB: {e}")
     
     discos = {}
     try:
@@ -65,4 +84,4 @@ def coletar_dados_locais():
         exibir_alerta_erro(f"⚠️ Erro ao coletar Sistema Operacional: {e}")
         log_erro(f"Erro ao coletar Sistema Operacional: {e}")
     
-    return Servidor(hostname, cpu, ano, ram, discos, sistema_operacional)
+    return Servidor(hostname, cpu, ano, nucleos, threads, ram, rede, discos, sistema_operacional)

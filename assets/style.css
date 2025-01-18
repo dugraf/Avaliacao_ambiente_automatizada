@@ -1,6 +1,6 @@
 /* Estilo Geral */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Arial', 'Verdana', 'Tahoma', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
@@ -54,4 +54,53 @@ ul li {
 
 ul li:nth-child(even) {
     background: #eef1f7;
+}
+
+.botao-copiar {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+.botao-copiar:hover {
+    background-color: #45a049;
+  }
+  
+
+.botao-salvar-xml {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+.botao-salvar-xml:hover {
+    background-color: #0056b3;
+  }
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+}
+
+.footer-logo {
+    width: 200px;
+    height: auto;
 }

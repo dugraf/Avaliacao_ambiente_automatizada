@@ -1,0 +1,11 @@
+2025-01-07 21:40:52,634 - ERROR - Erro ao coletar CPU: Scraper.search() missing 1 required positional argument: 'self'
+2025-01-07 21:44:26,389 - ERROR - Erro ao coletar CPU: cannot access local variable 'scraper' where it is not associated with a value
+2025-01-07 21:55:37,405 - ERROR - Erro ao coletar ano do processador: Scraper.search() missing 1 required positional argument: 'self'
+2025-01-07 21:56:28,438 - ERROR - Erro ao coletar ano do processador: Scraper.search() missing 1 required positional argument: 'self'
+2025-01-07 22:01:18,185 - ERROR - Erro ao coletar ano do processador: 'dict' object has no attribute 'lower'
+2025-01-07 22:02:31,140 - ERROR - Erro ao coletar CPU: 'cpu'
+2025-01-07 22:02:59,279 - ERROR - Erro ao coletar CPU: 'cpu'
+2025-01-07 22:03:41,477 - ERROR - Erro ao coletar CPU: 'cpu'
+2025-01-07 22:06:08,421 - ERROR - Erro ao coletar CPU: 'brand'
+2025-01-07 22:08:52,222 - ERROR - Erro ao coletar ano do processador: Scraper.search() missing 1 required positional argument: 'self'
+2025-01-17 18:50:50,642 - ERROR - Erro ao coletar quantidade de threads: 'cpu'

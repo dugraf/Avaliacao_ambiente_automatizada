@@ -1,13 +1,19 @@
 import tkinter as tk
+import threading
 from tkinter import messagebox
 from controllers.coleta_dados import coletar_dados_locais
 from controllers.exportacao import exportar_para_html
 
 def iniciar_coleta():
-    servidor = coletar_dados_locais()
-    messagebox.showinfo("Dados Coletados", str(servidor))
-    exportar_para_html(servidor)
-    exit()
+    def tarefa_coleta():
+        try:
+            servidor = coletar_dados_locais()
+            exportar_para_html(servidor)
+            messagebox.showinfo("Sucesso", "Dados coletados e exportados com sucesso!")
+        except Exception as e:
+            messagebox.showerror("Erro", f"Erro durante a coleta de dados: {str(e)}")
+
+    threading.Thread(target=tarefa_coleta).start()
 
 def iniciar_gui():
     root = tk.Tk()
