@@ -1,8 +1,9 @@
 class Servidor:
-    def __init__(self, hostname, cpu, ano, nucleos, threads, ram, rede, discos, sistema_operacional):
+    def __init__(self, hostname, cpu, ano, str, nucleos, threads, ram, rede, discos, sistema_operacional):
         self.hostname = hostname
         self.cpu = cpu
         self.ano = ano
+        self.str = str
         self.nucleos = nucleos
         self.threads = threads
         self.ram = ram
@@ -14,6 +15,7 @@ class Servidor:
         return (f"Hostname: {self.hostname}\n"
                 f"CPU: {self.cpu}\n"
                 f"Ano do processador: {self.ano}\n"
+                f"STR: {self.str}\n"
                 f"Núcleos: {self.nucleos}\n"
                 f"Threads: {self.threads}\n"
                 f"RAM: {self.ram}\n"

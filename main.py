@@ -1,6 +1,7 @@
-from views.gui import iniciar_gui
+from views.gui import AvaliacaoGUI
+from multiprocessing import freeze_support
 
 if __name__ == '__main__':
-    from multiprocessing import freeze_support
     freeze_support()
-    iniciar_gui()
+    app = AvaliacaoGUI()
+    app.run()

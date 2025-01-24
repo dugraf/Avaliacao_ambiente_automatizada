@@ -9,3 +9,11 @@
 2025-01-07 22:06:08,421 - ERROR - Erro ao coletar CPU: 'brand'
 2025-01-07 22:08:52,222 - ERROR - Erro ao coletar ano do processador: Scraper.search() missing 1 required positional argument: 'self'
 2025-01-17 18:50:50,642 - ERROR - Erro ao coletar quantidade de threads: 'cpu'
+2025-01-23 15:35:00,314 - ERROR - Erro ao coletar ano do processador: 'dict' object is not callable
+2025-01-23 15:35:05,848 - ERROR - Erro ao coletar Sistema Operacional: name 'FIXME' is not defined
+2025-01-23 15:35:45,483 - ERROR - Erro ao coletar ano do processador: 'dict' object is not callable
+2025-01-23 18:40:55,310 - ERROR - Erro ao coletar str do processador: 'NoneType' object has no attribute 'group'
+2025-01-23 18:41:38,550 - ERROR - Erro ao coletar str do processador: search() missing 1 required positional argument: 'string'
+2025-01-23 23:31:22,398 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "The specified module could not be found". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
+2025-01-23 23:36:27,203 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "The specified module could not be found". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
+2025-01-23 23:37:55,368 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "The specified module could not be found". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help

@@ -1,3 +1,4 @@
+import winreg
 import psutil
 import platform
 import socket
@@ -7,6 +8,8 @@ from models.servidor import Servidor
 from utils.logger import log_erro
 from views.interface import exibir_alerta_erro
 from scraper.scraper import Scraper
+
+scraper = Scraper()
 
 def coletar_dados_locais():
     try:
@@ -23,14 +26,21 @@ def coletar_dados_locais():
         exibir_alerta_erro(f"⚠️ Erro ao coletar CPU: {e}")
         log_erro(f"Erro ao coletar CPU: {e}")
         
+    buscar_api = scraper.search(query=cpu, limit=2)[0][0]
+    
     try:       
-        scraper = Scraper()
-        buscar_ano_cpu = scraper.search(query=cpu, limit=1)[0][0]
-        ano = re.search(r"\d{4}", buscar_ano_cpu.get("date")).group()
+        ano = re.search(r"\d{4}", buscar_api.get("date")).group()
     except Exception as e:
         ano = "Erro ao coletar ano do processador"
         exibir_alerta_erro(f"⚠️ Erro ao coletar ano do processador: {e}")
         log_erro(f"Erro ao coletar ano do processador: {e}")
+        
+    try:
+        str = format(buscar_api.get("thread")).replace(",", ".")
+    except Exception as e:
+        str = "Erro ao coletar str do processador"
+        exibir_alerta_erro(f"⚠️ Erro ao coletar str do processador: {e}")
+        log_erro(f"Erro ao coletar str do processador: {e}")
         
     try:
         nucleos = cpuinfo.get_cpu_info()['count']
@@ -78,10 +88,11 @@ def coletar_dados_locais():
         log_erro(f"Erro ao listar discos: {e}")
     
     try:
-        sistema_operacional = platform.system() + " " + platform.version()
+        key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\Microsoft\Windows NT\CurrentVersion")
+        sistema_operacional, _ = winreg.QueryValueEx(key, "ProductName")
     except Exception as e:
         sistema_operacional = "Erro ao coletar Sistema Operacional"
         exibir_alerta_erro(f"⚠️ Erro ao coletar Sistema Operacional: {e}")
         log_erro(f"Erro ao coletar Sistema Operacional: {e}")
     
-    return Servidor(hostname, cpu, ano, nucleos, threads, ram, rede, discos, sistema_operacional)
+    return Servidor(hostname, cpu, ano, str, nucleos, threads, ram, rede, discos, sistema_operacional)

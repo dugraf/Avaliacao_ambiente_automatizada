@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Relatório do Servidor</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Avaliação de Ambiente: Banco de Dados</h1>
+
+        <div class="section">
+            <h2>Banco de Dados: {nome_database}</h2>
+            <p><strong>Versao:</strong> {versao}</p>
+            <p><strong>Memória mínima dedicada ao banco:</strong> {memoria_min}</p>
+            <p><strong>Memória máxima dedicada ao banco:</strong> {memoria_max}</p>
+            <p><strong>Tamanho da base:</strong> {datafile}</p>
+            <p><strong>Tamanho do log:</strong> {logfile}</p>
+        </div>
+
+        <div class="section">
+            <h2>TOP 5 - Tabelas mais pesadas</h2>
+            <ul>
+                {tabelas_pesadas}
+            </ul>
+        </div>
+     
+        <div>
+            <button class="botao-copiar">Salvar XML</button>
+            <button class="botao-salvar-xml">Copiar</button>
+        </div>
+       
+
+        <footer class="footer">
+            <img src="cigam-logo.png" alt="CIGAM - Software de Gestão" class="footer-logo">
+        </footer>
+    </div>
+</body>
+</html>
