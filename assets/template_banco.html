@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Relatório do Servidor</title>
+    <title>Relatório do Banco de Dados</title>
 </head>
 <body>
     <div class="container">
-        <h1>Avaliação de Ambiente: Banco de Dados</h1>
+        <h1>Avaliação de Ambiente: Banco de Dados {banco}</h1>
 
         <div class="section">
-            <h2>Banco de Dados: {nome_database}</h2>
-            <p><strong>Versao:</strong> {versao}</p>
-            <p><strong>Memória mínima dedicada ao banco:</strong> {memoria_min}</p>
-            <p><strong>Memória máxima dedicada ao banco:</strong> {memoria_max}</p>
+            <h2>Banco de Dados: {database}</h2>
+            <p><strong>Versão:</strong> {versao}</p>
+            <p><strong>{memoria_1}</strong> {memoria_info_1}</p>
+            <p><strong>{memoria_2}</strong> {memoria_info_2}</p>
             <p><strong>Tamanho da base:</strong> {datafile}</p>
-            <p><strong>Tamanho do log:</strong> {logfile}</p>
+            <p><strong>{tamanho_log}</strong> {logfile}</p>
         </div>
 
         <div class="section">

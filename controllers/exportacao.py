@@ -1,9 +1,12 @@
 import os
+from time import sleep
 from tkinter import messagebox
 import webbrowser
 from collections import defaultdict
 
-def exportar_para_html(obj):
+TEMPO_SLEEP = 1
+
+def exportar_para_html(obj, janela):
     
     if hasattr(obj, 'discos'):
         # Ler o template HTML
@@ -33,48 +36,92 @@ def exportar_para_html(obj):
         html_content = template.format_map(dados)
         with open('assets/relatorio_servidor.html', 'w', encoding='utf-8') as output_file:
             output_file.write(html_content)
-            
+        
+        exportacao_sucesso(janela)
         webbrowser.open('file://' + os.path.realpath('assets/relatorio_servidor.html'))
         
-    elif hasattr(obj, 'datafile'):
-        # Ler o template HTML
+    elif hasattr(obj, 'tipo') and obj.tipo == "SQLServer":
+        # Ler o template HTML específico para SQLServer
         with open('assets/template_banco.html', 'r', encoding='utf-8') as template_file:
             template = template_file.read()
             
-        # Geração de uma tabela para tabelas pesadas
         tabelas_html = "".join(
             f"<tr><td>{nome}</td><td>{info[0]}</td><td>{info[1]}</td></tr>"
             for nome, info in obj.tabelas_pesadas.items()
         )
         
-        tabelas_html = f"""
+        tabelas_html = tabela(tabelas_html)
+        
+        dados = defaultdict(str, {
+            'banco' : 'SQL SERVER',
+            'database': obj.nome_database,
+            'versao': obj.versao,
+            'memoria_info_1': obj.memoria_min,
+            'memoria_info_2': obj.memoria_max,
+            'datafile': obj.datafile,
+            'logfile': obj.logfile,
+            'tabelas_pesadas': tabelas_html,
+            'tamanho_log': 'Tamanho do log:',
+            'memoria_1': 'Memória mínima dedicada ao banco:',
+            'memoria_2': 'Memória máxima dedicada ao banco:'
+        })
+        
+        html_content = template.format_map(dados)
+        with open('assets/relatorio_banco.html', 'w', encoding='utf-8') as output_file:
+            output_file.write(html_content)
+        
+        exportacao_sucesso(janela)
+        webbrowser.open('file://' + os.path.realpath('assets/relatorio_banco.html'))
+    
+    elif hasattr(obj, 'tipo') and obj.tipo == "Oracle":
+        # Ler o template HTML específico para Oracle
+        with open('assets/template_banco.html', 'r', encoding='utf-8') as template_file:
+            template = template_file.read()
+        
+        tabelas_html = "".join(
+            f"<tr><td>{nome}</td><td>{info[0]}</td><td>{info[1]}</td></tr>"
+            for nome, info in obj.tabelas_pesadas.items()
+        )
+        
+        tabelas_html = tabela(tabelas_html)
+        
+        dados = defaultdict(str, {
+            'banco' : 'Oracle',
+            'usuario': obj.usuario,
+            'versao': obj.versao,
+            'memoria_info_1': obj.sga,
+            'memoria_info_2': obj.pga,
+            'datafile': obj.armazenamento,
+            'tabelas_pesadas': tabelas_html,
+            'memoria_1': 'SGA:',
+            'memoria_2': 'PGA:'
+        })
+        
+        html_content = template.format_map(dados)
+        with open('assets/relatorio_banco.html', 'w', encoding='utf-8') as output_file:
+            output_file.write(html_content)
+       
+        exportacao_sucesso(janela)
+        webbrowser.open('file://' + os.path.realpath('assets/relatorio_banco.html'))
+    else:
+        messagebox.showerror("Erro", "Objeto não reconhecido ou inválido.")
+        
+def exportacao_sucesso(janela):
+    janela.after(0, lambda: messagebox.showinfo("Sucesso", "Dados coletados e exportados com sucesso!"))
+    sleep(TEMPO_SLEEP)
+
+def tabela(tabela):
+    return f"""
         <table border="1" style="width: 100%; border-collapse: collapse; text-align: left;">
             <thead>
                 <tr>
                     <th>Nome da Tabela</th>
                     <th>Quantidade de Linhas</th>
-                    <th>Espaço Total (MB)</th>
+                    <th>Espaço Total (GB)</th>
                 </tr>
             </thead>
             <tbody>
-                {tabelas_html}
+                {tabela}
             </tbody>
         </table>
         """
-        
-        dados = defaultdict(str, {
-            'nome_database': obj.nome_database,
-            'versao': obj.versao,
-            'memoria_min': obj.memoria_min,
-            'memoria_max': obj.memoria_max,
-            'datafile': obj.datafile,
-            'logfile': obj.logfile,
-            'tabelas_pesadas': tabelas_html
-        })
-        
-        # Gerar o HTML final, preenchendo as variáveis
-        html_content = template.format_map(dados)
-        with open('assets/relatorio_banco.html', 'w', encoding='utf-8') as output_file:
-            output_file.write(html_content)
-            
-        webbrowser.open('file://' + os.path.realpath('assets/relatorio_banco.html'))

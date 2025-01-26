@@ -25,9 +25,9 @@ EXEC sp_helpfile;
 SELECT TOP 5
     t.NAME AS TableName,
     p.rows AS RowCounts,
-    SUM(a.total_pages) * 8 / 1024 AS TotalSpaceMB,
-    SUM(a.used_pages) * 8 / 1024 AS UsedSpaceMB,
-    SUM(a.data_pages) * 8 / 1024 AS DataSpaceMB
+    SUM(a.total_pages) * 8 / 1024 / 1024 AS TotalSpaceGB,
+    SUM(a.used_pages) * 8 / 1024 / 1024 AS UsedSpaceGB,
+    SUM(a.data_pages) * 8 / 1024 / 1024 AS DataSpaceGB
 FROM  
     sys.tables t
 INNER JOIN
@@ -41,4 +41,4 @@ WHERE
 GROUP BY
     t.Name, p.Rows
 ORDER BY
-    TotalSpaceMB DESC;
+    TotalSpaceGB DESC;

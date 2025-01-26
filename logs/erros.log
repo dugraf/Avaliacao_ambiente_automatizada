@@ -17,3 +17,102 @@
 2025-01-23 23:31:22,398 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "The specified module could not be found". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
 2025-01-23 23:36:27,203 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "The specified module could not be found". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
 2025-01-23 23:37:55,368 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "The specified module could not be found". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
+2025-01-25 15:06:44,792 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "failed to get message for Windows Error 126". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
+2025-01-25 15:07:15,918 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "failed to get message for Windows Error 126". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
+2025-01-25 15:10:22,122 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "failed to get message for Windows Error 126". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
+2025-01-25 15:11:07,994 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "failed to get message for Windows Error 126". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
+2025-01-25 17:30:32,467 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "failed to get message for Windows Error 126". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
+2025-01-25 18:02:46,780 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "failed to get message for Windows Error 126". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
+2025-01-25 18:07:17,274 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "failed to get message for Windows Error 126". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
+2025-01-25 18:07:32,782 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "failed to get message for Windows Error 126". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
+2025-01-25 18:07:36,788 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "failed to get message for Windows Error 126". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
+2025-01-25 18:11:05,266 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "failed to get message for Windows Error 126". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
+2025-01-25 18:11:05,781 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "failed to get message for Windows Error 126". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
+2025-01-25 18:13:53,323 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "failed to get message for Windows Error 126". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
+2025-01-25 18:15:31,912 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "failed to get message for Windows Error 126". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
+2025-01-25 18:38:25,127 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "failed to get message for Windows Error 126". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
+2025-01-25 21:49:19,927 - ERROR - Erro ao conectar ao Oracle: DPY-4018: cannot parse connect string "localhost:1521/`TESTE"
+2025-01-25 21:49:30,764 - ERROR - Erro ao conectar ao Oracle: DPY-4018: cannot parse connect string "localhost:1521/`XEPDB1"
+2025-01-25 21:49:45,324 - ERROR - Erro ao conectar ao Oracle: DPY-4018: cannot parse connect string "localhost:1521/`XEPDB1"
+2025-01-25 21:51:37,899 - ERROR - Erro ao conectar ao Oracle: DPY-4018: cannot parse connect string "localhost:1521/`XEPDB1"
+2025-01-25 22:38:25,842 - ERROR - Erro ao conectar ao SQL Server: ('28000', "[28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Falha de logon do usuário 'sa'. (18456) (SQLDriverConnect); [28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Falha de logon do usuário 'sa'. (18456)")
+2025-01-25 23:13:56,171 - ERROR - Erro ao executar o script: ORA-00900: instrução SQL inválida
+Help: https://docs.oracle.com/error-help/db/ora-00900/
+2025-01-25 23:16:13,674 - ERROR - Erro ao executar o script: ORA-00900: instrução SQL inválida
+Help: https://docs.oracle.com/error-help/db/ora-00900/
+2025-01-25 23:16:31,866 - ERROR - Erro ao executar o script: ORA-00900: instrução SQL inválida
+Help: https://docs.oracle.com/error-help/db/ora-00900/
+2025-01-25 23:17:11,811 - ERROR - Erro ao executar o script: ORA-00900: instrução SQL inválida
+Help: https://docs.oracle.com/error-help/db/ora-00900/
+2025-01-25 23:17:17,711 - ERROR - Erro ao executar o script: ORA-00900: instrução SQL inválida
+Help: https://docs.oracle.com/error-help/db/ora-00900/
+2025-01-25 23:17:44,023 - ERROR - Erro ao executar o script: ORA-00900: instrução SQL inválida
+Help: https://docs.oracle.com/error-help/db/ora-00900/
+2025-01-25 23:18:54,393 - ERROR - Erro ao executar o script: ORA-00900: instrução SQL inválida
+Help: https://docs.oracle.com/error-help/db/ora-00900/
+2025-01-25 23:19:16,360 - ERROR - Erro ao executar o script: ORA-00900: instrução SQL inválida
+Help: https://docs.oracle.com/error-help/db/ora-00900/
+2025-01-25 23:19:45,546 - ERROR - Erro ao executar o script: ORA-00900: instrução SQL inválida
+Help: https://docs.oracle.com/error-help/db/ora-00900/
+2025-01-25 23:20:01,524 - ERROR - Erro ao executar o script: ORA-00900: instrução SQL inválida
+Help: https://docs.oracle.com/error-help/db/ora-00900/
+2025-01-25 23:21:58,231 - ERROR - Erro ao executar o script: ORA-00900: instrução SQL inválida
+Help: https://docs.oracle.com/error-help/db/ora-00900/
+2025-01-25 23:22:25,176 - ERROR - Erro ao executar o script: ORA-00900: instrução SQL inválida
+Help: https://docs.oracle.com/error-help/db/ora-00900/
+2025-01-25 23:22:41,486 - ERROR - Erro ao executar o script: ORA-00900: instrução SQL inválida
+Help: https://docs.oracle.com/error-help/db/ora-00900/
+2025-01-25 23:26:10,589 - ERROR - Erro ao executar o script: ORA-00900: instrução SQL inválida
+Help: https://docs.oracle.com/error-help/db/ora-00900/
+2025-01-25 23:26:34,354 - ERROR - Erro ao executar o comando: -- VERSAO DO BANCO
+--SELECT * FROM v$version: ORA-00900: instrução SQL inválida
+Help: https://docs.oracle.com/error-help/db/ora-00900/
+2025-01-25 23:27:11,077 - ERROR - Erro ao executar o comando: -- VERSAO DO BANCO
+--SELECT * FROM v$version: ORA-00900: instrução SQL inválida
+Help: https://docs.oracle.com/error-help/db/ora-00900/
+2025-01-26 01:03:46,728 - ERROR - Erro ao conectar ao SQL Server: ('28000', "[28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Falha de logon do usuário 'sa'. (18456) (SQLDriverConnect); [28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Falha de logon do usuário 'sa'. (18456)")
+2025-01-26 01:03:58,832 - ERROR - Erro ao conectar ao SQL Server: ('28000', "[28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Falha de logon do usuário 'sa'. (18456) (SQLDriverConnect); [28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Falha de logon do usuário 'sa'. (18456)")
+2025-01-26 01:04:08,259 - ERROR - Erro ao conectar ao SQL Server: ('28000', "[28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Falha de logon do usuário 'saa'. (18456) (SQLDriverConnect); [28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Falha de logon do usuário 'saa'. (18456)")
+2025-01-26 01:04:21,927 - ERROR - Erro ao conectar ao SQL Server: ('42000', '[42000] [Microsoft][ODBC SQL Server Driver][SQL Server]Não é possível abrir o banco de dados "TESTEa" solicitado pelo logon. Falha de logon. (4060) (SQLDriverConnect); [42000] [Microsoft][ODBC SQL Server Driver][SQL Server]Não é possível abrir o banco de dados "TESTEa" solicitado pelo logon. Falha de logon. (4060)')
+2025-01-26 01:04:41,327 - ERROR - Erro ao conectar ao SQL Server: ('42000', '[42000] [Microsoft][ODBC SQL Server Driver][SQL Server]Não é possível abrir o banco de dados "TESTEa" solicitado pelo logon. Falha de logon. (4060) (SQLDriverConnect); [42000] [Microsoft][ODBC SQL Server Driver][SQL Server]Não é possível abrir o banco de dados "TESTEa" solicitado pelo logon. Falha de logon. (4060)')
+2025-01-26 01:06:16,975 - ERROR - Erro ao conectar ao SQL Server: ('42000', '[42000] [Microsoft][ODBC SQL Server Driver][SQL Server]Não é possível abrir o banco de dados "TESTEa" solicitado pelo logon. Falha de logon. (4060) (SQLDriverConnect); [42000] [Microsoft][ODBC SQL Server Driver][SQL Server]Não é possível abrir o banco de dados "TESTEa" solicitado pelo logon. Falha de logon. (4060)')
+2025-01-26 01:06:51,758 - ERROR - Erro ao conectar ao SQL Server: ('28000', "[28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Falha de logon do usuário 'SAa'. (18456) (SQLDriverConnect); [28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Falha de logon do usuário 'SAa'. (18456)")
+2025-01-26 01:10:36,877 - ERROR - Erro ao conectar ao Oracle: DPY-6005: cannot connect to database (CONNECTION_ID=Y427Fon5meqxAPGNnzdtzg==).
+'NoneType' object has no attribute 'encode'
+2025-01-26 01:11:17,312 - ERROR - Erro ao conectar ao SQL Server: ('28000', "[28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Falha de logon do usuário 'saa'. (18456) (SQLDriverConnect); [28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Falha de logon do usuário 'saa'. (18456)")
+2025-01-26 01:15:41,376 - ERROR - Erro ao conectar ao SQL Server: ('28000', "[28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Falha de logon do usuário 'saa'. (18456) (SQLDriverConnect); [28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Falha de logon do usuário 'saa'. (18456)")
+2025-01-26 02:43:41,746 - ERROR - Erro ao conectar ao Oracle: ORA-01017: senha/nome do usuário inválido; log-on negado
+Help: https://docs.oracle.com/error-help/db/ora-01017/
+2025-01-26 02:43:52,213 - ERROR - Erro ao conectar ao Oracle: ORA-01017: senha/nome do usuário inválido; log-on negado
+Help: https://docs.oracle.com/error-help/db/ora-01017/
+2025-01-26 02:44:02,084 - ERROR - Erro ao conectar ao Oracle: DPY-6005: cannot connect to database (CONNECTION_ID=N6nnLrIrP1f3PwXoQUDXcA==).
+DPY-6001: Service "TESTE" is not registered with the listener at host "localhost" port 1521. (Similar to ORA-12514)
+2025-01-26 02:44:21,020 - ERROR - Erro ao conectar ao Oracle: ORA-01017: senha/nome do usuário inválido; log-on negado
+Help: https://docs.oracle.com/error-help/db/ora-01017/
+2025-01-26 02:45:14,440 - ERROR - Erro ao conectar ao SQL Server: ('28000', "[28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Falha de logon do usuário 'sa'. (18456) (SQLDriverConnect); [28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Falha de logon do usuário 'sa'. (18456)")
+2025-01-26 02:53:03,462 - ERROR - Erro ao conectar ao Oracle: ORA-01017: senha/nome do usuário inválido; log-on negado
+Help: https://docs.oracle.com/error-help/db/ora-01017/
+2025-01-26 02:55:49,738 - ERROR - Erro ao conectar ao Oracle: ORA-01017: senha/nome do usuário inválido; log-on negado
+Help: https://docs.oracle.com/error-help/db/ora-01017/
+2025-01-26 02:55:57,004 - ERROR - Erro ao conectar ao Oracle: DPY-6005: cannot connect to database (CONNECTION_ID=6lC06BBfLnbzzpkagHKeQA==).
+DPY-6001: Service "TESTE" is not registered with the listener at host "localhost" port 1521. (Similar to ORA-12514)
+2025-01-26 02:56:42,577 - ERROR - Erro ao conectar ao Oracle: DPY-6005: cannot connect to database (CONNECTION_ID=pohaCB3DSZkNeusUTIYitg==).
+DPY-6001: Service "TESTE" is not registered with the listener at host "localhost" port 1521. (Similar to ORA-12514)
+2025-01-26 02:56:53,046 - ERROR - Erro ao conectar ao Oracle: DPY-6005: cannot connect to database (CONNECTION_ID=1DwhmLIy+3MusVXgj2tKhw==).
+DPY-6001: Service "TESTE" is not registered with the listener at host "localhost" port 1521. (Similar to ORA-12514)
+2025-01-26 02:57:06,138 - ERROR - Erro ao conectar ao Oracle: DPY-6005: cannot connect to database (CONNECTION_ID=BgevkyPKLR+XsQUtp0cG4Q==).
+DPY-6001: Service "TESTE" is not registered with the listener at host "localhost" port 1521. (Similar to ORA-12514)
+2025-01-26 02:57:13,285 - ERROR - Erro ao conectar ao Oracle: DPY-6005: cannot connect to database (CONNECTION_ID=GIinveoUoal3LJ5+mwbDug==).
+DPY-6001: Service "TESTE" is not registered with the listener at host "localhost" port 1521. (Similar to ORA-12514)
+2025-01-26 02:57:25,077 - ERROR - Erro ao conectar ao Oracle: ORA-01017: senha/nome do usuário inválido; log-on negado
+Help: https://docs.oracle.com/error-help/db/ora-01017/
+2025-01-26 02:57:40,180 - ERROR - Erro ao conectar ao Oracle: ORA-01017: senha/nome do usuário inválido; log-on negado
+Help: https://docs.oracle.com/error-help/db/ora-01017/
+2025-01-26 03:41:52,378 - ERROR - Erro ao conectar ao Oracle: DPY-6005: cannot connect to database (CONNECTION_ID=BL0tyectFCPDbgbjEVK1Sg==).
+'NoneType' object has no attribute 'encode'
+2025-01-26 03:44:09,855 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+Help: https://docs.oracle.com/error-help/db/ora-28009/
+2025-01-26 04:46:17,542 - ERROR - Erro ao conectar ao Oracle: DPY-6005: cannot connect to database (CONNECTION_ID=Av6noPCFzZ6/NoUYYwafsw==).
+[WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+2025-01-26 04:46:39,239 - ERROR - Erro ao conectar ao Oracle: DPY-6005: cannot connect to database (CONNECTION_ID=7I5K4ijL1KYjoVJK+xdyxA==).
+[WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
