@@ -1,6 +1,7 @@
 import re
 import pyodbc
 import oracledb
+import os
 import logging
 from pathlib import Path
 from views.interface import exibir_alerta_erro, exibir_alerta_concluido
@@ -155,10 +156,16 @@ class ConexaoOracle:
         if not all([user, password, host, port, service]):
             exibir_alerta_erro("Parâmetros de conexão incompletos.")
             return False
-        dsn = f"{host}:{port}/{service}"
-        mode = oracledb.AUTH_MODE_SYSDBA if role == 'SYSDBA' else oracledb.AUTH_MODE_DEFAULT
+        dsn = f"{host}/{service}"
+        mode = oracledb.SYSDBA if role == 'SYSDBA' else oracledb.AUTH_MODE_DEFAULT
         try:
-            self.conexao = oracledb.connect(user=user, password=password, dsn=dsn, mode=mode)
+            oracle_home = os.getenv("ORACLE_HOME") or os.getenv("PATH")
+            if oracle_home:
+                for path in oracle_home.split(";"):
+                    if "client" in path.lower():
+                        oracledb.init_oracle_client(lib_dir=path)
+                        break
+            self.conexao = oracledb.connect(user=user, password=password, port=port, dsn=dsn, mode=mode)
             exibir_alerta_concluido("Conexão Oracle bem-sucedida!")
             logging.info("Conexão estabelecida com o Oracle.")
             return True

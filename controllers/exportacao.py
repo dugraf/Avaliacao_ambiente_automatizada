@@ -54,6 +54,7 @@ def exportar_para_html(obj, janela):
         
         dados = defaultdict(str, {
             'banco' : 'SQL SERVER',
+            'nome_database_ou_user' : 'Database',
             'database': obj.nome_database,
             'versao': obj.versao,
             'memoria_info_1': obj.memoria_min,
@@ -87,7 +88,8 @@ def exportar_para_html(obj, janela):
         
         dados = defaultdict(str, {
             'banco' : 'Oracle',
-            'usuario': obj.usuario,
+            'nome_database_ou_user' : 'Usuário',
+            'database': obj.usuario,
             'versao': obj.versao,
             'memoria_info_1': obj.sga,
             'memoria_info_2': obj.pga,

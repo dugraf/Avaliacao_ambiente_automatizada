@@ -1,13 +1,17 @@
 # -*- mode: python ; coding: utf-8 -*-
+from PyInstaller.utils.hooks import collect_submodules
+
+hiddenimports = ['asyncio', 'uuid', 'cryptography', 'cryptography.hazmat.backends', 'cryptography.hazmat.backends.openssl', 'cryptography.hazmat.bindings._rust']
+hiddenimports += collect_submodules('cryptography')
 
 
 a = Analysis(
     ['main.py'],
     pathex=[],
-    binaries=[],
-    datas=[('assets', 'assets'), ('logs', 'logs'), ('controllers\\\\scripts', 'scripts')],
-    hiddenimports=['uuid', 'asyncio'],
-    hookspath=[],
+    binaries=[('D:\\Program Files\\OpenSSL-Win64\\bin\\libssl-3-x64.dll', '.'), ('D:\\Program Files\\OpenSSL-Win64\\bin\\libcrypto-3-x64.dll', '.')],
+    datas=[('assets', 'assets'), ('logs', 'logs'), ('controllers\\scripts', 'controllers\\scripts')],
+    hiddenimports=hiddenimports,
+    hookspath=['hooks'],
     hooksconfig={},
     runtime_hooks=[],
     excludes=[],

@@ -116,3 +116,68 @@ Help: https://docs.oracle.com/error-help/db/ora-28009/
 [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
 2025-01-26 04:46:39,239 - ERROR - Erro ao conectar ao Oracle: DPY-6005: cannot connect to database (CONNECTION_ID=7I5K4ijL1KYjoVJK+xdyxA==).
 [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+2025-01-29 20:38:50,858 - ERROR - Erro ao conectar ao Oracle: DPY-6005: cannot connect to database (CONNECTION_ID=CkSWCKFAVBbdmadIo05a7w==).
+DPY-6001: Service "TESTE" is not registered with the listener at host "localhost" port 1521. (Similar to ORA-12514)
+2025-01-29 21:14:41,927 - ERROR - Erro ao conectar ao Oracle: DPY-6005: cannot connect to database (CONNECTION_ID=lxOq27wD5KYMay4Zyw7oUg==).
+DPY-6001: Service "TESTE" is not registered with the listener at host "localhost" port 1521. (Similar to ORA-12514)
+2025-01-29 21:14:48,945 - ERROR - Erro ao conectar ao Oracle: ORA-01017: senha/nome do usuário inválido; log-on negado
+Help: https://docs.oracle.com/error-help/db/ora-01017/
+2025-02-02 16:01:47,419 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "The specified module could not be found". See https://python-oracledb.readthedocs.io/en/latest/user_guide/initialization.html for help
+Help: https://python-oracledb.readthedocs.io/en/latest/user_guide/troubleshooting.html#dpi-1047
+2025-02-02 16:01:53,537 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "The specified module could not be found". See https://python-oracledb.readthedocs.io/en/latest/user_guide/initialization.html for help
+Help: https://python-oracledb.readthedocs.io/en/latest/user_guide/troubleshooting.html#dpi-1047
+2025-02-02 16:02:01,838 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "The specified module could not be found". See https://python-oracledb.readthedocs.io/en/latest/user_guide/initialization.html for help
+Help: https://python-oracledb.readthedocs.io/en/latest/user_guide/troubleshooting.html#dpi-1047
+2025-02-02 16:02:09,259 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "The specified module could not be found". See https://python-oracledb.readthedocs.io/en/latest/user_guide/initialization.html for help
+Help: https://python-oracledb.readthedocs.io/en/latest/user_guide/troubleshooting.html#dpi-1047
+2025-02-02 16:02:12,109 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "The specified module could not be found". See https://python-oracledb.readthedocs.io/en/latest/user_guide/initialization.html for help
+Help: https://python-oracledb.readthedocs.io/en/latest/user_guide/troubleshooting.html#dpi-1047
+2025-02-02 16:02:48,201 - ERROR - Erro ao conectar ao Oracle: DPY-6005: cannot connect to database (CONNECTION_ID=dDSyI9X3KQpd94x7P4vCzw==).
+DPY-6001: Service "TESTE" is not registered with the listener at host "localhost" port 1521. (Similar to ORA-12514)
+2025-02-02 16:02:51,917 - ERROR - Erro ao conectar ao Oracle: DPY-6005: cannot connect to database (CONNECTION_ID=k4gQmziDT3ErE1/9Jq+/pg==).
+DPY-6001: Service "TESTE" is not registered with the listener at host "localhost" port 1521. (Similar to ORA-12514)
+2025-02-02 16:26:43,029 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "The specified module could not be found". See https://python-oracledb.readthedocs.io/en/latest/user_guide/initialization.html for help
+Help: https://python-oracledb.readthedocs.io/en/latest/user_guide/troubleshooting.html#dpi-1047
+2025-02-02 17:07:39,602 - ERROR - Erro ao conectar ao Oracle: DPI-1047: Cannot locate a 64-bit Oracle Client library: "The specified module could not be found". See https://python-oracledb.readthedocs.io/en/latest/user_guide/initialization.html for help
+Help: https://python-oracledb.readthedocs.io/en/latest/user_guide/troubleshooting.html#dpi-1047
+2025-02-02 18:28:45,215 - ERROR - Erro ao conectar ao Oracle: ORA-12514: TNS:listener não tem conhecimento sobre o serviço solicitado atualmente no descritor de conexão
+2025-02-02 18:28:55,933 - ERROR - Erro ao conectar ao Oracle: ORA-01017: senha/nome do usuário inválido; log-on negado
+2025-02-02 18:29:00,580 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 18:29:06,961 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 18:48:54,952 - ERROR - Erro ao conectar ao Oracle: ORA-12514: TNS:listener não tem conhecimento sobre o serviço solicitado atualmente no descritor de conexão
+2025-02-02 18:49:14,357 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 18:51:26,250 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 18:51:28,744 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 18:55:26,915 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:12:55,884 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:13:53,598 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:13:59,859 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:15:04,864 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:15:05,576 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:16:45,861 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:17:18,417 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:17:21,291 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:17:23,961 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:19:44,367 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:19:49,495 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:19:52,992 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:22:38,550 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:23:34,766 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:25:53,314 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:26:12,937 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:26:40,763 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:26:44,575 - ERROR - Erro ao conectar ao Oracle: ORA-01017: senha/nome do usuário inválido; log-on negado
+2025-02-02 19:26:48,618 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:34:09,179 - ERROR - Erro ao conectar ao Oracle: ORA-12514: TNS:listener não tem conhecimento sobre o serviço solicitado atualmente no descritor de conexão
+2025-02-02 19:34:15,827 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:34:24,568 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:36:06,561 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:36:12,390 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:38:40,802 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:38:53,729 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:40:41,330 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:41:02,103 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:44:24,240 - ERROR - Erro ao conectar ao Oracle: ORA-28009: a conexão como SYS deve ser como SYSDBA ou SYSOPER
+2025-02-02 19:48:11,224 - ERROR - Erro ao conectar ao SQL Server: ('42000', '[42000] [Microsoft][ODBC SQL Server Driver][SQL Server]Não é possível abrir o banco de dados "TESTEa" solicitado pelo logon. Falha de logon. (4060) (SQLDriverConnect); [42000] [Microsoft][ODBC SQL Server Driver][SQL Server]Não é possível abrir o banco de dados "TESTEa" solicitado pelo logon. Falha de logon. (4060)')
+2025-02-02 21:10:32,668 - ERROR - Erro ao conectar ao SQL Server: ('28000', "[28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Falha de logon do usuário 'saa'. (18456) (SQLDriverConnect); [28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Falha de logon do usuário 'saa'. (18456)")
+2025-02-02 21:10:34,251 - ERROR - Erro ao conectar ao SQL Server: ('28000', "[28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Falha de logon do usuário 'saa'. (18456) (SQLDriverConnect); [28000] [Microsoft][ODBC SQL Server Driver][SQL Server]Falha de logon do usuário 'saa'. (18456)")

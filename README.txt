@@ -34,3 +34,4 @@ Este projeto requer a instalação de alguns componentes específicos para funci
     pip install -r requisitos.txt
     Isso instalará todas as bibliotecas necessárias para rodar o projeto, como o psutil, tk, entre outras.
 
+python -m PyInstaller --onedir --noconsole --add-data "assets;assets" --add-data "logs;logs" --add-data "controllers\scripts;controllers\scripts" --add-binary "D:\Program Files\OpenSSL-Win64\bin\libssl-3-x64.dll;." --add-binary "D:\Program Files\OpenSSL-Win64\bin\libcrypto-3-x64.dll;." --hidden-import=asyncio --hidden-import=uuid --hidden-import=cryptography --hidden-import=cryptography.hazmat.backends --hidden-import=cryptography.hazmat.backends.openssl --hidden-import=cryptography.hazmat.bindings._rust --collect-submodules cryptography --additional-hooks-dir=hooks main.py

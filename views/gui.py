@@ -25,9 +25,15 @@ class AvaliacaoGUI:
         style.map("TButton", background=[("active", "#FF7F00")])
 
     def create_widgets(self):
-        ttk.Label(self.root, text="Avaliação de Servidor Local").pack(pady=20)
-        ttk.Button(self.root, text="Coletar Dados", command=self.iniciar_coleta).pack(pady=10)
-        ttk.Button(self.root, text="Conectar ao Banco de Dados", command=self.conectar_banco).pack(pady=10)
+        self.root.grid_columnconfigure(0, weight=1, uniform="equal")
+        self.root.grid_rowconfigure(0, weight=0)
+        self.root.grid_rowconfigure(1, weight=1)
+        self.root.grid_rowconfigure(2, weight=1)
+        self.root.grid_rowconfigure(3, weight=1)
+
+        ttk.Label(self.root, text="Avaliação de Servidor Local").grid(row=0, column=0, pady=5)
+        ttk.Button(self.root, text="Coletar Dados", cursor="hand2", command=self.iniciar_coleta).grid(row=1, column=0, padx=10, pady=5)
+        ttk.Button(self.root, text="Conectar ao Banco de Dados", cursor="hand2", command=self.conectar_banco).grid(row=2, column=0, padx=10, pady=5)
 
     def iniciar_coleta(self):
         def tarefa_coleta():
@@ -54,12 +60,14 @@ class BancoConexaoGUI:
         self.window.title("Conectar ao Banco de Dados")
         self.window.geometry("300x300")
         self.window.configure(bg="#CFCFCF")
+        self.btn_avaliar_oracle_database = None
+        self.btn_avaliar_sql_server = None
         self.create_widgets()
 
     def create_widgets(self):
         ttk.Label(self.window, text="Escolha o Banco de Dados").pack(pady=10)
-        ttk.Button(self.window, text="Conectar no SQL Server", command=self.conectar_sql_server).pack(pady=10)
-        ttk.Button(self.window, text="Conectar no Oracle", command=self.conectar_oracle).pack(pady=10)
+        ttk.Button(self.window, text="Conectar no SQL Server", cursor="hand2", command=self.conectar_sql_server).pack(pady=10)
+        ttk.Button(self.window, text="Conectar no Oracle", cursor="hand2", command=self.conectar_oracle).pack(pady=10)
 
     def conectar_sql_server(self):
         self.sqlGUI()
@@ -99,12 +107,15 @@ class BancoConexaoGUI:
                 validar_conexao = conexao.conectar(servidor, database, usuario, senha)
                 self.conexoes["sql_server"] = conexao
                 if validar_conexao is True:
-                    btn_avaliar_sql_server = ttk.Button(
-                        frame_sql, text="Avaliar Banco SQL Server", command=lambda: on_avaliar_sql_server()
+                    self.btn_avaliar_sql_server = ttk.Button(
+                        frame_sql, text="Avaliar Banco SQL Server", cursor="hand2", command=lambda: on_avaliar_sql_server()
                     )
-                    btn_avaliar_sql_server.grid(row=5, columnspan=2, pady=10)
+                    self.btn_avaliar_sql_server.grid(row=5, columnspan=2, pady=10)
+                elif validar_conexao is False:
+                    self.btn_avaliar_sql_server.grid_forget()
+                    
                 def on_avaliar_sql_server():
-                    btn_avaliar_sql_server.destroy()
+                    self.btn_avaliar_sql_server.destroy()
                     try:
                         banco = conexao.executar_script_sql("controllers/scripts/sql_server.sql", database=database)
                         exportar_para_html(banco, janela=self.window)
@@ -114,7 +125,7 @@ class BancoConexaoGUI:
             except Exception as e:
                 self.window.after(0, lambda: messagebox.showerror("Erro", f"Erro ao conectar ao SQL Server: {str(e)}"))
 
-        ttk.Button(frame_sql, text="Conectar", command=conectar).grid(row=4, column=0, columnspan=2, pady=10)
+        ttk.Button(frame_sql, text="Conectar", cursor="hand2", command=conectar).grid(row=4, column=0, columnspan=2, pady=10)
 
     def conectar_oracle(self):
         self.oracleGUI()
@@ -160,25 +171,26 @@ class BancoConexaoGUI:
             porta = entry_porta.get()
             servico = entry_servico.get()
             role = role_combobox.get()
-            try:
-                conexao = ConexaoOracle()
-                validar_conexao = conexao.conectar(usuario, senha, host, porta, servico, role)
-                self.conexoes["oracle_database"] = conexao
-                if validar_conexao is True:
-                    btn_avaliar_oracle_database = ttk.Button(
-                        frame_sql, text="Avaliar Banco Oracle Database", command=lambda: on_avaliar_oracle_database()
-                    )
-                    btn_avaliar_oracle_database.grid(row=6, columnspan=2, pady=10)
-                def on_avaliar_oracle_database():
-                    btn_avaliar_oracle_database.destroy()
-                    try:
-                        banco = conexao.executar_script_oracle("controllers/scripts/oracle.sql", usuario)
-                        exportar_para_html(banco, janela=self.window)
-                        
-                    except Exception as e:
+            
+            conexao = ConexaoOracle()
+            validar_conexao = conexao.conectar(usuario, senha, host, porta, servico, role)
+            self.conexoes["oracle_database"] = conexao
+            if validar_conexao is True:
+                self.btn_avaliar_oracle_database = ttk.Button(
+                    frame_sql, text="Avaliar Banco Oracle Database", cursor="hand2", command=lambda: on_avaliar_oracle_database()
+                )
+                self.btn_avaliar_oracle_database.grid(row=6, columnspan=2, pady=10)
+            elif validar_conexao is False:
+                self.btn_avaliar_oracle_database.grid_forget()
+                
+            def on_avaliar_oracle_database():
+                self.btn_avaliar_oracle_database.destroy()
+                try:
+                    banco = conexao.executar_script_oracle("controllers/scripts/oracle.sql", usuario)
+                    exportar_para_html(banco, janela=self.window)
+                    
+                except Exception as e:
                         self.window.after(0, lambda: messagebox.showerror("Erro", f"Erro durante a coleta de dados: {str(e)}"))
-            except Exception as e:
-                self.window.after(0, lambda: messagebox.showerror("Erro", f"Erro ao conectar ao Oracle Database: {str(e)}"))
 
 
-        ttk.Button(frame_sql, text="Conectar", command=conectar).grid(row=5, column=0, columnspan=2, pady=10)
+        ttk.Button(frame_sql, text="Conectar", cursor="hand2", command=conectar).grid(row=5, column=0, columnspan=2, pady=10)
