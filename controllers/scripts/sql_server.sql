@@ -24,11 +24,11 @@ EXEC sp_helpfile;
 -- TABELAS MAIS PESADAS
 SELECT TOP 5
     t.NAME AS TableName,
-    p.rows AS RowCounts,
-    SUM(a.total_pages) * 8 / 1024 / 1024 AS TotalSpaceGB,
-    SUM(a.used_pages) * 8 / 1024 / 1024 AS UsedSpaceGB,
-    SUM(a.data_pages) * 8 / 1024 / 1024 AS DataSpaceGB
-FROM  
+    SUM(p.rows) AS RowCounts,
+    CAST(SUM(a.total_pages) * 8 / 1024.0 / 1024.0 AS DECIMAL(18,2)) AS TotalSpaceGB,
+    CAST(SUM(a.used_pages) * 8 / 1024.0 / 1024.0 AS DECIMAL(18,2)) AS UsedSpaceGB,
+    CAST((SUM(a.total_pages) - SUM(a.used_pages)) * 8 / 1024.0 / 1024.0 AS DECIMAL(18,2)) AS UnusedSpaceGB
+FROM
     sys.tables t
 INNER JOIN
     sys.indexes i ON t.OBJECT_ID = i.object_id
@@ -37,8 +37,10 @@ INNER JOIN
 INNER JOIN
     sys.allocation_units a ON p.partition_id = a.container_id
 WHERE
-    t.is_ms_shipped = 0 
+    t.NAME NOT LIKE 'dt%'
+    AND t.is_ms_shipped = 0
+    AND i.OBJECT_ID > 255
 GROUP BY
-    t.Name, p.Rows
+    t.Name
 ORDER BY
     TotalSpaceGB DESC;

@@ -5,53 +5,107 @@ from controllers.coleta_dados import coletar_dados_locais
 from controllers.exportacao import exportar_para_html
 from controllers.conexao import ConexaoSQLServer, ConexaoOracle
 
+def center_window(window, width, height):
+    screen_width = window.winfo_screenwidth()
+    screen_height = window.winfo_screenheight()
+    position_top = int(screen_height / 2 - height / 2)
+    position_right = int(screen_width / 2 - width / 2)
+    window.geometry(f'{width}x{height}+{position_right}+{position_top}')
+        
 class AvaliacaoGUI:
     def __init__(self):
         self.executor = ThreadPoolExecutor()
         self.root = tk.Tk()
-        self.root.title("Avaliação de Servidores - CIGAM")
-        self.root.geometry("400x300")
-        self.root.configure(bg="#CFCFCF")
         self.conexoes = {}
-
         self.configure_styles()
-        self.create_widgets()
+        self.login()
 
     def configure_styles(self):
         style = ttk.Style()
         style.theme_use("clam")
-        style.configure("TLabel", foreground="black", background="#CFCFCF", font=("Arial", 12, "bold"))
+        style.configure("TLabel", foreground="black", background="#F0F0F0", font=("Arial", 12, "bold"))
         style.configure("TButton", foreground="white", background="#FFA500", font=("Arial", 10, "bold"), padding=10)
         style.map("TButton", background=[("active", "#FF7F00")])
 
-    def create_widgets(self):
-        self.root.grid_columnconfigure(0, weight=1, uniform="equal")
-        self.root.grid_rowconfigure(0, weight=0)
-        self.root.grid_rowconfigure(1, weight=1)
-        self.root.grid_rowconfigure(2, weight=1)
-        self.root.grid_rowconfigure(3, weight=1)
+    def login(self):
+        self.root.title("Login")
+        self.root.configure(bg="#F0F0F0")
+        center_window(self.root, 260, 200)
 
-        ttk.Label(self.root, text="Avaliação de Servidor Local").grid(row=0, column=0, pady=5)
-        ttk.Button(self.root, text="Coletar Dados", cursor="hand2", command=self.iniciar_coleta).grid(row=1, column=0, padx=10, pady=5)
-        ttk.Button(self.root, text="Conectar ao Banco de Dados", cursor="hand2", command=self.conectar_banco).grid(row=2, column=0, padx=10, pady=5)
+        ttk.Label(self.root, text="Usuário:").grid(row=1, column=0, padx=5, pady=5, sticky="w")
+        self.usuario = ttk.Entry(self.root)
+        self.usuario.grid(row=1, column=1, padx=5, pady=5, sticky="w")
+
+        ttk.Label(self.root, text="Senha:").grid(row=2, column=0, padx=5, pady=5, sticky="w")
+        self.senha = ttk.Entry(self.root, show="*")
+        self.senha.grid(row=2, column=1, padx=5, pady=5, sticky="w")
+
+        # Mensagem de erro abaixo do campo de senha
+        self.error_label = ttk.Label(self.root, text="", foreground="red", background="#F0F0F0", font=("Arial", 10))
+        self.error_label.grid(row=3, column=0, columnspan=2)
+
+        # Botão de login
+        ttk.Button(self.root, text="Entrar", cursor="hand2", command=self.validar_credenciais).grid(row=4, column=1, padx=10, pady=10)
+
+    def validar_credenciais(self):
+        usuario = self.usuario.get()
+        senha = self.senha.get()
+
+        if usuario == "infracigam" and senha == "@zyba.@":
+            self.root.withdraw()
+            self.create_widgets()
+        else:
+            self.error_label.config(text="Usuário ou senha inválidos!")
+
+    def create_widgets(self):
+        self.main_window = tk.Toplevel(self.root)
+        self.main_window.title("Avaliação de Servidores - CIGAM")
+        self.main_window.geometry("400x300")
+        self.main_window.configure(bg="#CFCFCF")
+        self.main_window.grid_columnconfigure(0, weight=1, uniform="equal")
+        self.main_window.grid_rowconfigure(0, weight=0)
+        self.main_window.grid_rowconfigure(1, weight=1)
+        self.main_window.grid_rowconfigure(2, weight=1)
+        self.main_window.grid_rowconfigure(3, weight=1)
+        center_window(self.main_window, 400, 300)
+
+        ttk.Label(self.main_window, text="Avaliação de Servidor Local").grid(row=0, column=0, pady=5)
+        ttk.Button(self.main_window, text="Coletar Dados", cursor="hand2", command=self.iniciar_coleta).grid(row=1, column=0, padx=10, pady=5)
+        ttk.Button(self.main_window, text="Conectar ao Banco de Dados", cursor="hand2", command=self.conectar_banco).grid(row=2, column=0, padx=10, pady=5)
+        
+        self.main_window.protocol("WM_DELETE_WINDOW", self.on_close)
+        self.main_window.mainloop()
 
     def iniciar_coleta(self):
-        def tarefa_coleta():
-            try:
-                servidor = coletar_dados_locais()
-                exportar_para_html(servidor, janela=self.root)
-
-            except Exception as e:
-                 self.root.after(0, lambda: messagebox.showerror("Erro", f"Erro durante a coleta de dados: {str(e)}"))
-        
-        self.executor.submit(tarefa_coleta)
+        AvaliacaoServidor(self.main_window)
 
     def conectar_banco(self):
-        BancoConexaoGUI(self.root, self.conexoes)
+        center_window(self.main_window, 400, 300)
+        BancoConexaoGUI(self.main_window, self.conexoes)
+        
+    def on_close(self):
+        self.executor.shutdown(wait=True)
+        self.main_window.quit()
+        self.main_window.destroy()
+        self.root.quit()
+        self.root.destroy()
 
     def run(self):
         self.root.mainloop()
+        
+class AvaliacaoServidor:
+    def __init__(self, parent):
+        self.parent = parent
+        self.tarefa_coleta()
+        
+    def tarefa_coleta(self):
+        try:
+            servidor = coletar_dados_locais()
+            exportar_para_html(servidor, janela=self.parent)
 
+        except Exception as e:
+            self.parent.after(0, lambda: messagebox.showerror("Erro", f"Erro durante a coleta de dados: {str(e)}"))
+        
 class BancoConexaoGUI:
     def __init__(self, parent, conexoes):
         self.parent = parent
